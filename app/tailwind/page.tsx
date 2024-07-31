@@ -1,74 +1,74 @@
 export default function Tailwind() {
 	return (
-		<div className="relative flex min-h-screen flex-col justify-center items-center overflow-hidden bg-orange-500 py-6 sm:py-12 font-sans">
-			<div className="bg-black w-[398px] h-[844px] p-4 rounded-[2.5rem] relative ring-gray-800 ring-4 ">
-				<span className="bg-black text-transparent absolute top-1 left-1/2 -translate-x-1/2 w-[50%] h-10 rounded-2xl">notch</span>
-				<ul className="absolute top-28 -left-1.5 flex flex-col gap-3  *:text-transparent *:bg-gray-900 *:w-2 *:rounded-sm">
-					<li className="h-9 mb-4">소리</li>
+		<div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-orange-500 py-6 font-sans sm:py-12">
+			<div className="relative h-[844px] min-w-[398px] rounded-[2.5rem] bg-black p-4 ring-4 ring-zinc-800">
+				<span className="absolute left-1/2 top-1 h-10 w-[50%] -translate-x-1/2 rounded-2xl bg-black text-transparent">notch</span>
+				<ul className="absolute -left-1.5 top-28 flex flex-col gap-3 *:w-2 *:rounded-sm *:bg-zinc-800 *:text-transparent">
+					<li className="mb-4 h-8">소리</li>
 					<li className="h-12">볼륨 업</li>
 					<li className="h-12">볼륨 다운</li>
 				</ul>
-				<span className="bg-gray-800 text-transparent w-2 h-20 absolute top-44 -right-1.5">전원</span>
-				<div className="bg-white flex flex-col w-full  min-h-full h-full px-2 pt-10 rounded-[2rem] overflow-hidden *:w-full">
-					<header className="py-2 px-1 border-b-gray-400 border-b-2 *:text-md *:inline-block *:font-medium">
+				<span className="absolute -right-1.5 top-44 h-20 w-2 bg-zinc-800 text-transparent">전원</span>
+				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white px-2 pt-10 *:w-full">
+					<header className="*:text-md border-b-2 border-b-gray-400 px-1 py-2 *:inline-block *:font-medium">
 						<span className="mr-1">March</span>
 						<span>2024</span>
-						<span className="text-gray-600 inline-block align-middle w-7 px-1 ml-1">
-							<svg className="stroke-1 stroke-current fill-none w-full" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<span className="ml-1 inline-block w-7 px-1 align-middle text-gray-600">
+							<svg className="w-full fill-none stroke-current stroke-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 								<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
 							</svg>
 						</span>
 					</header>
 					<section className="flex flex-col">
 						<div>
-							<p className="py-7 text-center leading-tight font-medium text-md">
+							<p className="text-md py-7 text-center font-medium leading-tight">
 								Hello, Nulnu! <br />
 								Your medicines for today
 							</p>
 						</div>
 						<div className="py-2">
-							<ul className="grid grid-cols-6 items-center flex-wrap px-1 gap-2 *:flex *:flex-col *:items-center *:rounded-2xl *:py-1 *:px-2 *:gap-3 *:transition-all">
-								<li className="hover:bg-blue-200 *:inline-block">
-									<span className="text-2xl font-semibold">29</span>
+							<ul className="grid grid-cols-6 flex-wrap items-center gap-2 px-1 *:flex *:flex-col *:items-center *:gap-3 *:rounded-2xl *:px-2 *:py-1 *:transition-all">
+								<li className="*:inline-block *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">29</span>
 									<span className="text-xs">Mon</span>
 								</li>
-								<li className="hover:bg-blue-200 *:inline-block">
-									<span className="text-2xl font-semibold">30</span>
+								<li className="*:inline-block  *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">30</span>
 									<span className="text-xs">Tue</span>
 								</li>
-								<li className="hover:bg-blue-200 *:inline-block bg-blue-400">
-									<span className="text-2xl font-semibold">31</span>
+								<li className="bg-blue-400 *:inline-bloc *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">31</span>
 									<span className="text-xs">Wed</span>
 								</li>
-								<li className="hover:bg-blue-200 *:inline-block">
-									<span className="text-2xl font-semibold">01</span>
+								<li className="*:inline-block *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">01</span>
 									<span className="text-xs">Thu</span>
 								</li>
-								<li className="hover:bg-blue-200 *:inline-block">
-									<span className="text-2xl font-semibold">02</span>
+								<li className="*:inline-block *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">02</span>
 									<span className="text-xs">Fri</span>
 								</li>
-								<li className="hover:bg-blue-200 *:inline-block">
-									<span className="text-2xl font-semibold">03</span>
+								<li className="*:inline-block *:font-medium hover:bg-blue-200">
+									<span className="text-2xl">03</span>
 									<span className="text-xs">Sat</span>
 								</li>
 							</ul>
 						</div>
 					</section>
 					<section className="mt-24">
-						<ul className="w-full flex flex-col gap-2 *:relative">
-							<li className="w-full group *:w-full *:h-48 *:transition-all *:rounded-2xl *:flex *:p-4">
-								<div className="bg-yellow-300 flex-col justify-between  z-10 relative  hover:w-[85%] hover:text-gray-600 *:font-medium">
+						<ul className="flex w-full flex-col gap-2 *:relative">
+							<li className="group w-full *:flex *:h-48 *:w-full *:rounded-2xl *:p-4 *:transition-all">
+								<div className="relative z-10 flex-col justify-between bg-yellow-300 *:font-medium hover:w-[85%] hover:text-neutral-50">
 									<div>
 										<h3 className="text-2xl font-medium">Nora - BE</h3>
-										<p className="text-xs -mt-1">Norenthindrone - 0.35mg</p>
+										<p className="-mt-1 text-xs">Norenthindrone - 0.35mg</p>
 									</div>
 									<p className="text-sm">7h30AM</p>
 								</div>
-								<div className="bg-blue-400 absolute top-0 right-0 flex-row-reverse items-center">
-									<span className="block overflow-hidden size-5">
+								<div className="absolute right-0 top-0 flex-row-reverse items-center bg-blue-400">
+									<span className="block size-5 overflow-hidden">
 										<svg
-											className="fill-none stroke-[3px] stroke-black group-hover:stroke-white"
+											className="fill-none stroke-black stroke-[3px] group-hover:stroke-white"
 											data-slot="icon"
 											viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg"
@@ -79,18 +79,18 @@ export default function Tailwind() {
 									</span>
 								</div>
 							</li>
-							<li className="w-full group *:w-full *:h-48 *:transition-all *:rounded-2xl *:flex *:p-4">
-								<div className="bg-green-400 flex-col justify-between z-10 relative  hover:w-[85%] hover:text-gray-600 *:font-medium">
+							<li className="group w-full *:flex *:h-48 *:w-full *:rounded-2xl *:p-4 *:transition-all">
+								<div className="relative z-10 flex-col justify-between bg-green-400 *:font-medium hover:w-[85%] hover:text-neutral-50">
 									<div>
 										<h3 className="text-2xl font-medium">Feosol</h3>
-										<p className="text-xs -mt-1">Ferrous Sulfate</p>
+										<p className="-mt-1 text-xs">Ferrous Sulfate</p>
 									</div>
 									<p className="text-sm">7h30AM</p>
 								</div>
-								<div className="bg-blue-400 absolute top-0 right-0 flex-row-reverse items-center">
-									<span className="block overflow-hidden size-5">
+								<div className="absolute right-0 top-0 flex-row-reverse items-center bg-blue-400">
+									<span className="block size-5 overflow-hidden">
 										<svg
-											className="fill-none stroke-[3px] stroke-black group-hover:stroke-white"
+											className="fill-none stroke-black stroke-[3px] group-hover:stroke-white"
 											data-slot="icon"
 											viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg"
