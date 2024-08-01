@@ -17,7 +17,8 @@ export default function Home() {
 				<div className="group flex flex-col">
 					<input className="bg-gray-200 w-full" type="email" placeholder="Write your email" />
 					<span className="group-focus-within:block hidden">Make sure it is a valid email...</span>
-					<button className="bg-banana h-10 rounded-eleven">Submit</button>
+					<button className="btn">Submit</button>
+					<a href="#">link</a>
 				</div>
 			</div>
 		</main>
