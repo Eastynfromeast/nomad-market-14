@@ -10,14 +10,14 @@ export default function Home() {
 						</span>
 						<div className="size-6 bg-red-500 text-white flex items-center justify-center rounded-full relative">
 							<span className="z-10">{index}</span>
-							<div className="size-6 bg-red-500 rounded-full absolute animate-ping" />
+							<div className="size-6 bg-red-500 rounded-full absolute" />
 						</div>
 					</div>
 				))}
 				<div className="group flex flex-col">
 					<input className="bg-gray-200 w-full" type="email" placeholder="Write your email" />
 					<span className="group-focus-within:block hidden">Make sure it is a valid email...</span>
-					<button>Submit</button>
+					<button className="bg-banana h-10 rounded-eleven">Submit</button>
 				</div>
 			</div>
 		</main>
