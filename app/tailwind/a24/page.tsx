@@ -11,13 +11,13 @@ export default function TailWindLast() {
 					</ul>
 					<span className="-right-1.5 top-44 h-20 w-2 bg-zinc-800 text-transparent">전원</span>
 				</div>
-				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white  pt-14 pb-10  px-5">
+				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white pt-14 pb-10  px-5">
 					<header className="mb-5">
 						<h1 className="text-4xl font-bold">Weather</h1>
 					</header>
 					<section>
 						<ul className=" flex flex-col gap-5 *:overflow-hidden *:p-5 *:flex *:flex-row *:justify-between *:border-2 *:border-black *:rounded-xl *:border-b-[6px] *:transition ">
-							<li className="hover:bg-green-400 hover:text-white hover:border-green-700 *:flex *:font-bold">
+							<li className="bg-white hover:bg-green-400 hover:text-white hover:border-green-700 *:flex *:font-bold">
 								<div className="flex-col">
 									<h3 className="text-lg">Casius</h3>
 									<span className="text-[12px]">Mars, 12AM</span>
@@ -70,7 +70,7 @@ export default function TailWindLast() {
 					<div className="mt-12">
 						<a
 							href="#"
-							className="overflow-hidden block text-black size-12 p-3 mx-auto border-black border-2 border-b-[5px] rounded-full transition hover:bg-black hover:text-white hover:border-neutral-400 "
+							className="overflow-hidden block bg-white text-black size-12 p-3 mx-auto border-black border-2 border-b-[5px] rounded-full transition hover:bg-black hover:text-white hover:border-neutral-400 "
 						>
 							<svg className="w-full fill-none stroke-[3px] stroke-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
@@ -79,7 +79,83 @@ export default function TailWindLast() {
 					</div>
 				</div>
 			</section>
-			<div>2</div>
+			<section className="relative min-w-iphone rounded-[2.5rem] bg-black p-4 ring-4 ring-zinc-800">
+				<div className="*:absolute *:text-transparent">
+					<span className="left-1/2 top-1 h-10 w-[50%] -translate-x-1/2 rounded-2xl bg-black text-transparent">notch</span>
+					<ul className="-left-1.5 top-28 flex flex-col gap-3 *:w-2 *:rounded-sm *:bg-zinc-800 *:text-transparent">
+						<li className="mb-4 h-8">소리</li>
+						<li className="h-12">볼륨 업</li>
+						<li className="h-12">볼륨 다운</li>
+					</ul>
+					<span className="-right-1.5 top-44 h-20 w-2 bg-zinc-800 text-transparent">전원</span>
+				</div>
+				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white  pt-14 pb-10  px-5">
+					<header>
+						<a
+							href="#"
+							className="overflow-hidden block text-black size-10 p-1 border-black border-2 border-b-[5px] rounded-full transition hover:bg-black hover:text-white hover:border-neutral-400 "
+						>
+							<svg
+								className="w-full fill-none stroke-2 stroke-current"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+							</svg>
+						</a>
+					</header>
+					<section>
+						<div className="text-center *:font-extrabold">
+							<p className="uppercase text-sm text-zinc-600">simple tag</p>
+							<h1 className="text-3xl py-5">Work with best designers </h1>
+						</div>
+						<ul className="grid grid-cols-2 gap-2 *:text-white *:min-h-40 *:w-full *:relative *:text-center *:p-5 *:rounded-xl *:border-black *:border-2 *:inline-flex *:items-center *:transition">
+							<li className="bg-yellow-400 group hover:text-black ">
+								<svg className="fill-current mx-auto size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path d="M15,4.43c0,.2,.12,.39,.31,.47l2.66,1.12,1.07,2.66c.08,.19,.26,.31,.46,.31s.39-.12,.46-.31l1.06-2.66,2.66-1.06c.19-.08,.31-.26,.31-.46s-.12-.39-.31-.46l-2.66-1.06-1.06-2.66c-.15-.38-.78-.38-.93,0l-1.06,2.65-2.65,1c-.19,.07-.32,.25-.32,.46Zm3.53-.6c.13-.05,.23-.15,.29-.28l.68-1.7,.68,1.7c.05,.13,.15,.23,.28,.28l1.7,.68-1.7,.68c-.13,.05-.23,.15-.28,.28l-.68,1.7-.68-1.7c-.05-.12-.15-.22-.27-.28l-1.71-.72,1.69-.64Zm-4.02,5.66l-.53-2.11c-.06-.22-.26-.38-.48-.38s-.43,.16-.48,.38l-.53,2.1-2.1,.48c-.22,.05-.38,.25-.39,.48,0,.23,.15,.43,.37,.49l2.12,.57,.53,2.11c.06,.22,.26,.38,.48,.38s.43-.16,.48-.38l.53-2.11,2.11-.53c.22-.06,.38-.26,.38-.48s-.16-.43-.38-.48l-2.11-.53Zm-.53,1.13c-.18,.04-.32,.18-.36,.36l-.12,.46-.12-.46c-.04-.18-.18-.31-.35-.36l-.47-.13,.41-.09c.18-.04,.38-.23,.42-.42l.1-.42,.12,.46c.04,.18,.18,.32,.36,.36l.46,.12-.46,.12Zm9.52-2.62c-.28,0-.5,.22-.5,.5v11c0,.09,0,.19-.01,.28l-2.9-2.9c-1.15-1.15-3.02-1.15-4.17,0l-.58,.58c-.74,.74-1.94,.74-2.68,0l-5.58-5.58c-1.15-1.15-3.02-1.15-4.17,0l-1.92,1.92V4.5c0-1.93,1.57-3.5,3.5-3.5H15.5c.28,0,.5-.22,.5-.5s-.22-.5-.5-.5H4.5C2.02,0,0,2.02,0,4.5v15c0,2.48,2.02,4.5,4.5,4.5h15c2.48,0,4.5-2.02,4.5-4.5V8.5c0-.28-.22-.5-.5-.5Zm-4,15H4.5c-1.93,0-3.5-1.57-3.5-3.5v-4.29l2.62-2.62c.76-.76,2-.76,2.75,0l5.58,5.58c1.13,1.13,2.96,1.13,4.09,0l.58-.58c.76-.76,2-.76,2.75,0l3.33,3.33c-.54,1.23-1.77,2.09-3.2,2.09ZM7,5c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z" />
+								</svg>
+								<span className="block absolute left-0 bottom-3 w-full text-xs opacity-0 translate-y-5 transition group-hover:opacity-100 group-hover:translate-y-0">
+									designed by nulnu.
+								</span>
+							</li>
+							<li className="bg-teal-500 group hover:text-black ">
+								<svg className="fill-current mx-auto size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path d="M15,4.43c0,.2,.12,.39,.31,.47l2.66,1.12,1.07,2.66c.08,.19,.26,.31,.46,.31s.39-.12,.46-.31l1.06-2.66,2.66-1.06c.19-.08,.31-.26,.31-.46s-.12-.39-.31-.46l-2.66-1.06-1.06-2.66c-.15-.38-.78-.38-.93,0l-1.06,2.65-2.65,1c-.19,.07-.32,.25-.32,.46Zm3.53-.6c.13-.05,.23-.15,.29-.28l.68-1.7,.68,1.7c.05,.13,.15,.23,.28,.28l1.7,.68-1.7,.68c-.13,.05-.23,.15-.28,.28l-.68,1.7-.68-1.7c-.05-.12-.15-.22-.27-.28l-1.71-.72,1.69-.64Zm-4.02,5.66l-.53-2.11c-.06-.22-.26-.38-.48-.38s-.43,.16-.48,.38l-.53,2.1-2.1,.48c-.22,.05-.38,.25-.39,.48,0,.23,.15,.43,.37,.49l2.12,.57,.53,2.11c.06,.22,.26,.38,.48,.38s.43-.16,.48-.38l.53-2.11,2.11-.53c.22-.06,.38-.26,.38-.48s-.16-.43-.38-.48l-2.11-.53Zm-.53,1.13c-.18,.04-.32,.18-.36,.36l-.12,.46-.12-.46c-.04-.18-.18-.31-.35-.36l-.47-.13,.41-.09c.18-.04,.38-.23,.42-.42l.1-.42,.12,.46c.04,.18,.18,.32,.36,.36l.46,.12-.46,.12Zm9.52-2.62c-.28,0-.5,.22-.5,.5v11c0,.09,0,.19-.01,.28l-2.9-2.9c-1.15-1.15-3.02-1.15-4.17,0l-.58,.58c-.74,.74-1.94,.74-2.68,0l-5.58-5.58c-1.15-1.15-3.02-1.15-4.17,0l-1.92,1.92V4.5c0-1.93,1.57-3.5,3.5-3.5H15.5c.28,0,.5-.22,.5-.5s-.22-.5-.5-.5H4.5C2.02,0,0,2.02,0,4.5v15c0,2.48,2.02,4.5,4.5,4.5h15c2.48,0,4.5-2.02,4.5-4.5V8.5c0-.28-.22-.5-.5-.5Zm-4,15H4.5c-1.93,0-3.5-1.57-3.5-3.5v-4.29l2.62-2.62c.76-.76,2-.76,2.75,0l5.58,5.58c1.13,1.13,2.96,1.13,4.09,0l.58-.58c.76-.76,2-.76,2.75,0l3.33,3.33c-.54,1.23-1.77,2.09-3.2,2.09ZM7,5c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z" />
+								</svg>
+								<span className="block absolute left-0 bottom-3 w-full text-xs opacity-0 translate-y-5 transition group-hover:opacity-100 group-hover:translate-y-0">
+									designed by nulnu.
+								</span>
+							</li>
+							<li className="bg-pink-400 group hover:text-black ">
+								<svg className="fill-current mx-auto size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path d="M15,4.43c0,.2,.12,.39,.31,.47l2.66,1.12,1.07,2.66c.08,.19,.26,.31,.46,.31s.39-.12,.46-.31l1.06-2.66,2.66-1.06c.19-.08,.31-.26,.31-.46s-.12-.39-.31-.46l-2.66-1.06-1.06-2.66c-.15-.38-.78-.38-.93,0l-1.06,2.65-2.65,1c-.19,.07-.32,.25-.32,.46Zm3.53-.6c.13-.05,.23-.15,.29-.28l.68-1.7,.68,1.7c.05,.13,.15,.23,.28,.28l1.7,.68-1.7,.68c-.13,.05-.23,.15-.28,.28l-.68,1.7-.68-1.7c-.05-.12-.15-.22-.27-.28l-1.71-.72,1.69-.64Zm-4.02,5.66l-.53-2.11c-.06-.22-.26-.38-.48-.38s-.43,.16-.48,.38l-.53,2.1-2.1,.48c-.22,.05-.38,.25-.39,.48,0,.23,.15,.43,.37,.49l2.12,.57,.53,2.11c.06,.22,.26,.38,.48,.38s.43-.16,.48-.38l.53-2.11,2.11-.53c.22-.06,.38-.26,.38-.48s-.16-.43-.38-.48l-2.11-.53Zm-.53,1.13c-.18,.04-.32,.18-.36,.36l-.12,.46-.12-.46c-.04-.18-.18-.31-.35-.36l-.47-.13,.41-.09c.18-.04,.38-.23,.42-.42l.1-.42,.12,.46c.04,.18,.18,.32,.36,.36l.46,.12-.46,.12Zm9.52-2.62c-.28,0-.5,.22-.5,.5v11c0,.09,0,.19-.01,.28l-2.9-2.9c-1.15-1.15-3.02-1.15-4.17,0l-.58,.58c-.74,.74-1.94,.74-2.68,0l-5.58-5.58c-1.15-1.15-3.02-1.15-4.17,0l-1.92,1.92V4.5c0-1.93,1.57-3.5,3.5-3.5H15.5c.28,0,.5-.22,.5-.5s-.22-.5-.5-.5H4.5C2.02,0,0,2.02,0,4.5v15c0,2.48,2.02,4.5,4.5,4.5h15c2.48,0,4.5-2.02,4.5-4.5V8.5c0-.28-.22-.5-.5-.5Zm-4,15H4.5c-1.93,0-3.5-1.57-3.5-3.5v-4.29l2.62-2.62c.76-.76,2-.76,2.75,0l5.58,5.58c1.13,1.13,2.96,1.13,4.09,0l.58-.58c.76-.76,2-.76,2.75,0l3.33,3.33c-.54,1.23-1.77,2.09-3.2,2.09ZM7,5c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z" />
+								</svg>
+								<span className="block absolute left-0 bottom-3 w-full text-xs opacity-0 translate-y-5 transition group-hover:opacity-100 group-hover:translate-y-0">
+									designed by nulnu.
+								</span>
+							</li>
+							<li className="bg-orange-600 group hover:text-black ">
+								<svg className="fill-current mx-auto size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path d="M15,4.43c0,.2,.12,.39,.31,.47l2.66,1.12,1.07,2.66c.08,.19,.26,.31,.46,.31s.39-.12,.46-.31l1.06-2.66,2.66-1.06c.19-.08,.31-.26,.31-.46s-.12-.39-.31-.46l-2.66-1.06-1.06-2.66c-.15-.38-.78-.38-.93,0l-1.06,2.65-2.65,1c-.19,.07-.32,.25-.32,.46Zm3.53-.6c.13-.05,.23-.15,.29-.28l.68-1.7,.68,1.7c.05,.13,.15,.23,.28,.28l1.7,.68-1.7,.68c-.13,.05-.23,.15-.28,.28l-.68,1.7-.68-1.7c-.05-.12-.15-.22-.27-.28l-1.71-.72,1.69-.64Zm-4.02,5.66l-.53-2.11c-.06-.22-.26-.38-.48-.38s-.43,.16-.48,.38l-.53,2.1-2.1,.48c-.22,.05-.38,.25-.39,.48,0,.23,.15,.43,.37,.49l2.12,.57,.53,2.11c.06,.22,.26,.38,.48,.38s.43-.16,.48-.38l.53-2.11,2.11-.53c.22-.06,.38-.26,.38-.48s-.16-.43-.38-.48l-2.11-.53Zm-.53,1.13c-.18,.04-.32,.18-.36,.36l-.12,.46-.12-.46c-.04-.18-.18-.31-.35-.36l-.47-.13,.41-.09c.18-.04,.38-.23,.42-.42l.1-.42,.12,.46c.04,.18,.18,.32,.36,.36l.46,.12-.46,.12Zm9.52-2.62c-.28,0-.5,.22-.5,.5v11c0,.09,0,.19-.01,.28l-2.9-2.9c-1.15-1.15-3.02-1.15-4.17,0l-.58,.58c-.74,.74-1.94,.74-2.68,0l-5.58-5.58c-1.15-1.15-3.02-1.15-4.17,0l-1.92,1.92V4.5c0-1.93,1.57-3.5,3.5-3.5H15.5c.28,0,.5-.22,.5-.5s-.22-.5-.5-.5H4.5C2.02,0,0,2.02,0,4.5v15c0,2.48,2.02,4.5,4.5,4.5h15c2.48,0,4.5-2.02,4.5-4.5V8.5c0-.28-.22-.5-.5-.5Zm-4,15H4.5c-1.93,0-3.5-1.57-3.5-3.5v-4.29l2.62-2.62c.76-.76,2-.76,2.75,0l5.58,5.58c1.13,1.13,2.96,1.13,4.09,0l.58-.58c.76-.76,2-.76,2.75,0l3.33,3.33c-.54,1.23-1.77,2.09-3.2,2.09ZM7,5c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z" />
+								</svg>
+								<span className="block absolute left-0 bottom-3 w-full text-xs opacity-0 translate-y-5 transition group-hover:opacity-100 group-hover:translate-y-0">
+									designed by nulnu.
+								</span>
+							</li>
+						</ul>
+					</section>
+					<div className="mt-12">
+						<a
+							href="#"
+							className="overflow-hidden block bg-blue-600 text-white border-transparent border-2 w-full p-3 mx-auto transition-color text-center rounded-xl hover:bg-white hover:text-blue-600 hover:border-blue-600"
+						>
+							<span className="text-lg font-bold">Let's get it done!</span>
+						</a>
+					</div>
+				</div>
+			</section>
 			<div>3</div>
 		</main>
 	);
