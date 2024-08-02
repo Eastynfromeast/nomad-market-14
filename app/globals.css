@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+	@font-face {
+		font-family: "Montserrat", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400 600;
+		font-style: normal;
+		src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+	}
+
+	html {
+		font-family: "Montserrat", sans-serif;
+	}
 	a {
 		@apply text-blue-500;
 	}
@@ -12,10 +25,17 @@
 	.text-bigger-hello {
 		@apply text-3xl font-semibold;
 	}
+	.min-w-iphone {
+		@apply w-[390px] h-[844px];
+	}
 }
 
 @layer components {
 	.btn {
 		@apply bg-banana h-10 rounded-eleven;
 	}
+}
+
+* {
+	font-family: "Montserrat", sans-serif;
 }
