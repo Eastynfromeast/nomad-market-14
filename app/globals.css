@@ -17,7 +17,7 @@
 		font-family: "Montserrat", sans-serif;
 	}
 	a {
-		@apply text-blue-500;
+		@apply text-orange-500;
 	}
 }
 

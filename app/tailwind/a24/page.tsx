@@ -11,7 +11,7 @@ export default function TailWindLast() {
 					</ul>
 					<span className="-right-1.5 top-44 h-20 w-2 bg-zinc-800 text-transparent">전원</span>
 				</div>
-				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white pt-14 pb-10  px-5">
+				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-sky-100 pt-14 pb-10  px-5">
 					<header className="mb-5">
 						<h1 className="text-4xl font-bold">Weather</h1>
 					</header>
@@ -89,11 +89,11 @@ export default function TailWindLast() {
 					</ul>
 					<span className="-right-1.5 top-44 h-20 w-2 bg-zinc-800 text-transparent">전원</span>
 				</div>
-				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white  pt-14 pb-10  px-5">
+				<div className="flex h-full min-h-full w-full flex-col overflow-hidden rounded-[2rem] bg-white pt-14 pb-10  px-5">
 					<header>
 						<a
 							href="#"
-							className="overflow-hidden block text-black size-10 p-1 border-black border-2 border-b-[5px] rounded-full transition hover:bg-black hover:text-white hover:border-neutral-400 "
+							className="overflow-hidden block bg-white text-black size-10 p-1 border-black border-2 border-b-[5px] rounded-full transition hover:bg-black hover:text-white hover:border-neutral-400 "
 						>
 							<svg
 								className="w-full fill-none stroke-2 stroke-current"
