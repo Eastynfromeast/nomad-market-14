@@ -1,10 +1,16 @@
 # Nomad Market 14
 
-## Server Actions
+## 5. Server Actions
+
+### 5.1 Server Actions
+
+- inline server actions
+  - create a function and add "use server" on the top of the function inside
 
 ### 5.2 useFormStatus
 
 - useFormStatus는 form의 child 컴포넌트에서만 사용될 수 있다
+  - [form-button.ts](https://github.com/Eastynfromeast/nomad-market-14/components/form-button.tsx)
 
 ### 5.3 useFormState
 
@@ -15,3 +21,15 @@
   ```
   const [state, action] = useFormState(onSubmit, { errors: ["", ""] });
   ```
+
+## 6. Validation
+
+### 6.0 Introduction to Zod
+
+    ```
+    // explaining requirements of our data
+    const usernameSchema = z.string().min(5).max(10);
+
+    // validating
+    usernameSchema.parse(data.username);
+    ```

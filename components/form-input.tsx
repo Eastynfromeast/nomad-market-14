@@ -2,7 +2,7 @@ interface FormInputProps {
 	type: string;
 	placeholder: string;
 	required: boolean;
-	errors: string[];
+	errors?: string[];
 	name: string;
 }
 
@@ -16,7 +16,7 @@ export default function FormInput({ type, placeholder, required, errors, name }:
 				placeholder={placeholder}
 				required={required}
 			/>
-			{errors.map((error, index) => (
+			{errors?.map((error, index) => (
 				<span key={index} className="text-red-500 font-medium">
 					{error}
 				</span>
