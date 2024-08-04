@@ -33,3 +33,26 @@
     // validating
     usernameSchema.parse(data.username);
     ```
+
+### 6.1 Validation Error
+
+    ```
+     ⨯ ZodError: [
+        {
+          "code": "too_small",
+          "minimum": 10,
+          "type": "string",
+          "inclusive": true,
+          "exact": false,
+          "message": "String must contain at least 10 character(s)",
+          "path": [
+           "password"
+          ]
+        }
+      ]
+    ```
+
+    ```
+    // safeParse() does not throw the error unlike parse()
+    	const result = formSchema.safeParse(data);
+    ```
