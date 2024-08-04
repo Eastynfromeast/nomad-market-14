@@ -43,6 +43,14 @@
 
 ### 6.2 Refinement
 
+- refine(true or false return 함수,"에러 메시지")
+
+  ```
+  const checkUsername = (username: string) => !username.includes("potato");
+
+  .refine(checkUsername, "No potatoes allowed!"),
+  ```
+
 - refine을 object 바깥에서 하면서, 에러 메시지를 노출하고 싶다면 path로 책임 요소를 알려줘야 한다
   ```
   const formSchema = z.object({
