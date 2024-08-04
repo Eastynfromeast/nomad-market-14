@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nomad Market 14
 
-## Getting Started
+## Server Actions
 
-First, run the development server:
+### 5.2 useFormStatus
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- useFormStatus는 form의 child 컴포넌트에서만 사용될 수 있다
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5.3 useFormState
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- "use server"는 server component에서만 사용 가능하다
+  - client component에서 사용해야 한다면 컴포넌트를 따로 뺴줘야 한다
+  - [action.ts](https://github.com/Eastynfromeast/nomad-market-14/app/login/actions.ts)
+- useFormState는 action 함수와 초기 값을 인자로 받는다
+  ```
+  const [state, action] = useFormState(onSubmit, { errors: ["", ""] });
+  ```
