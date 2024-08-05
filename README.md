@@ -45,6 +45,8 @@
 
 - refine(true or false return 함수,"에러 메시지")
 
+  - refine(우리가 refine하려는 data의 조건문, )
+
   ```
   const checkUsername = (username: string) => !username.includes("potato");
 
