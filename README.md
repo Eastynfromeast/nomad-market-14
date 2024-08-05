@@ -57,3 +57,13 @@
     ///
     }).refine(checkPassword, { message: "Both passwords should be the same!", path: ["confirmPassword"] });
   ```
+
+### 6.3 Transformation
+
+- input은 name이 있어야만 한다
+
+### 6.4 Refactor
+
+- input의 props는 일일히 다 지정해주지 않아도 된다. 왜냐? `InputHTMLAttributes<HTMLInputElement>` 가 있으니까
+
+### 6.6 Log In Validation
