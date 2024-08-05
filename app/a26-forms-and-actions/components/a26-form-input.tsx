@@ -10,14 +10,14 @@ export default function A26FormInput({ type, name, placeholder, required, errors
 	return (
 		<div className="flex flex-col gap-2">
 			<input
-				className="py-2 px-3 rounded-3xl outline-none ring ring-transparent focus:ring-orange-500 focus:outline-orange-300 invalid:ring-red-500"
+				className="py-2 px-3 rounded-3xl outline-none ring ring-transparent focus:ring-orange-500 focus:outline-orange-300 "
 				name={name}
 				type={type}
 				placeholder={placeholder}
 				required={required}
 			/>
 			{errors?.map((error, index) => (
-				<p key={index} className="text-red-500 font-medium text-xs">
+				<p key={index} className="text-red-500 font-medium">
 					{error}
 				</p>
 			))}

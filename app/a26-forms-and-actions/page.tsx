@@ -20,6 +20,7 @@ export default function FormsAndActions() {
 				<A26FormInput name="password" type="password" placeholder="Password" required errors={state?.errors ?? []} />
 				<A26FormBtn text="Log In" />
 			</form>
+			{state?.message ? <p className="text-center mt-8 font-medium text-lg bg-blue-600 text-white rounded-2xl p-3">{state.message}</p> : ""}
 		</div>
 	);
 }
