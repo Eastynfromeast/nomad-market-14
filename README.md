@@ -67,3 +67,12 @@
 - input의 props는 일일히 다 지정해주지 않아도 된다. 왜냐? `InputHTMLAttributes<HTMLInputElement>` 가 있으니까
 
 ### 6.6 Log In Validation
+
+### 6.7 Coerce
+
+- validator.js
+
+- coerce : input에서 string으로 입력된 number를 number로 강제 전환!
+  ```
+  const tokenSchema = z.coerce.number();
+  ```
