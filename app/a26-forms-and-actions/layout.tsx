@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "@/app/globals.css";
 
 export const metadata: Metadata = {
 	title: "A26 Forms&Actions",
@@ -11,9 +10,5 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body className=" bg-neutral-100 text-black max-w-screen-sm mx-auto">{children}</body>
-		</html>
-	);
+	return <div className="w-full h-screen bg-neutral-100 text-black mx-auto">{children}</div>;
 }
