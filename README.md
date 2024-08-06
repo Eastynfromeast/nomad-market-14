@@ -131,3 +131,16 @@
     userId     Int  <- db에 실제 저장되는 값
   }
 ```
+
+### 7.5 onDelete
+
+- 연결되어 있는 schema가 사라졌을 때 어떻게 할 것인지 설정 가능!
+  - Cascade : 해당 스키마도 사라짐
+  - SetNull : 연결된 스키마를 null로 처리, 연결된 id 영역도 optional 처리해줘야
+  - Restrict : 부모레코드가 참조되고 있는 동안은 삭제되는 걸 막음 (default?)
+  ```
+    model SMSToken {
+    user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId     Int
+  }
+  ```
