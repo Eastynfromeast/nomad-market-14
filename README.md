@@ -100,3 +100,13 @@
 ```
   npx prisma migrate dev
 ```
+
+- create `/lib/db.ts`
+
+### 7.3 Prisma Studio
+
+```
+  npx prisma studio
+```
+
+- 스키마의 변경사항을 적용하기 위해서는 저장 -> `npx prisma migrate dev` -> npx prisma studio 재실행
