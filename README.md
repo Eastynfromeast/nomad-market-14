@@ -110,3 +110,24 @@
 ```
 
 - 스키마의 변경사항을 적용하기 위해서는 저장 -> `npx prisma migrate dev` -> npx prisma studio 재실행
+
+### 7.4 Relationships
+
+```
+  model User {
+    id         Int        @id @default(autoincrement())
+    username   String     @unique
+    email      String?    @unique
+    ...
+    SMSToken   SMSToken[]
+  }
+
+  model SMSToken {
+    id         Int      @id @default(autoincrement())
+    token      String   @unique
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+    user       User     @relation(fields: [userId], references: [id])
+    userId     Int  <- db에 실제 저장되는 값
+  }
+```
