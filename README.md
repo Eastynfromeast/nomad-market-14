@@ -94,3 +94,9 @@
   3. Run prisma db pull to turn your database schema into a Prisma schema.
   4. Run prisma generate to generate the Prisma Client. You can then start querying your database.
   5. Tip: Explore how you can extend the ORM with scalable connection pooling, global caching, and real-time database events. Read: https://pris.ly/beyond-the-orm
+
+### 7.2 Schemas
+
+```
+  npx prisma migrate dev
+```
