@@ -147,4 +147,55 @@
 
 ## 8 Authentication
 
+- 무엇을 하나요?
+  - check if username is taken
+  - check if the email is taken
+  - hash password
+  - save the user to db
+  - log the user in
+  - redirect "/home"
+
 ### 8.1 Database Validation
+
+- validation을 zod에게 맡김!
+
+  ```
+  // check if the email is taken
+  const checkUniqueEmail = async (email: string) => {
+    const user = await db.user.findUnique({
+      where: {
+        email: email,
+      },
+      select: {
+        id: true,
+      },
+    });
+    return !Boolean(user);
+  };
+
+  ///
+  email: z.string().email().toLowerCase().refine(checkUniqueEmail, "There is an account already registered with that email"),
+  ```
+
+### 8.2 Password Hashing
+
+- hash password
+- bcrypt
+
+  ```
+  // npm i bcrypt @types/bcrypt
+  const hasedPassword = bcrypt.hash(result.data.password, 12);
+  ```
+
+  ### 8.3 Iron Session
+
+- log the user in
+- 아, iron session 로그인에 쓰는 거였구나 ㅎ
+- [password generator](https://1password.com/password-generator/)
+
+  ```
+  	const cookie = await getIronSession(cookies(), {
+  		cookieName: "delicious-carrot",
+  		password: process.env.COOKIE_PASSWORD!,
+  	});
+  ```
