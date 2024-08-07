@@ -144,3 +144,7 @@
     userId     Int
   }
   ```
+
+## 8 Authentication
+
+### 8.1 Database Validation
