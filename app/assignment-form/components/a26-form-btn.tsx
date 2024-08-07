@@ -6,7 +6,7 @@ interface FormBtnProps {
 	text: string;
 }
 
-export default function A26FormBtn({ text }: FormBtnProps) {
+export default function FormBtn({ text }: FormBtnProps) {
 	const { pending } = useFormStatus();
 	return (
 		<button
