@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import getSession from "@/lib/session";
 
 const checkUsername = (username: string) => !username.includes("potato");
 const checkPassword = ({ password, confirmPassword }: { password: string; confirmPassword: string }) => password === confirmPassword;
@@ -47,7 +48,7 @@ const formSchema = z
 			.refine(checkUsername, "No potatoes allowed!")
 			.refine(checkUniqueUsername, "This username is already taken"),
 		email: z.string().email().toLowerCase().refine(checkUniqueEmail, "There is an account already registered with that email"),
-		password: z.string().min(PASSWORD_MIN_LENGTH).regex(PASSWORD_REGEX, PASSWORD_REGEX_ERROR),
+		password: z.string().min(PASSWORD_MIN_LENGTH),
 		confirmPassword: z.string().min(PASSWORD_MIN_LENGTH),
 	})
 	.refine(checkPassword, { message: "Both passwords should be the same!", path: ["confirmPassword"] });
@@ -79,13 +80,9 @@ export async function createAccount(prevState: any, formData: FormData) {
 		});
 		console.log(user);
 		// log the user in id를 쿠키로 줄 것!
-		const cookie = await getIronSession(cookies(), {
-			cookieName: "delicious-carrot",
-			password: process.env.COOKIE_PASSWORD!,
-		});
-		//@ts-ignore
-		cookie.id = user.id;
-		await cookie.save();
+		const session = await getSession();
+		session.id = user.id;
+		await session.save();
 		// redirect "/home"
 		redirect("/profile");
 	}

@@ -199,3 +199,11 @@
   		password: process.env.COOKIE_PASSWORD!,
   	});
   ```
+
+### 8.5 Email Log In
+
+- what we gonna do
+  - find user with the email
+  - if the user is found, check password hash
+  - log the user in
+  - redirect "/profile"
