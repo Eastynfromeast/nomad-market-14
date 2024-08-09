@@ -236,3 +236,38 @@
   })
   .refine(///)
   ```
+
+### 8.7 Log Out
+
+- make sure that we understand how the authentication work
+
+- Log out
+
+  ```
+  	const logOut = async () => {
+  	"use server";
+  	const session = await getSession();
+  	await session.destroy();
+  	redirect("/");
+  };
+  ```
+
+- `notfound()`
+  - NextJS가 제공하는 Super Cool한 navigation
+  - The notFound function allows you to render the not-found file within a route segment
+  ```
+  async function getUser() {
+    const session = await getSession();
+    if (session.id) {
+      const user = await db.user.findUnique({
+        where: {
+          id: session.id,
+        },
+      });
+      if (user) {
+        return user;
+      }
+    }
+    notFound();
+  }
+  ```
