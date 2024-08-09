@@ -207,3 +207,32 @@
   - if the user is found, check password hash
   - log the user in
   - redirect "/profile"
+
+### 8.6 superRefine
+
+- 데이터베이스에서 계속 부르지 않고 validation 단계마다 확인하고 멈추게 하기
+- how to abort early?
+  ```
+  const formSchema = z.object({
+    ///
+  }).superRefine(async ({ username }, ctx) => {
+  	const user = await db.user.findUnique({
+  		where: {
+  			username,
+  		},
+  		select: {
+  			id: true,
+  		},
+  	});
+  	if (user) {
+  		ctx.addIssue({
+  			code: "custom",
+  			message: "This username is already taken",
+  			path: ["username"],
+  			fatal: true,
+  		});
+  		return z.NEVER;
+  	}
+  })
+  .refine(///)
+  ```

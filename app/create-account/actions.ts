@@ -3,38 +3,12 @@ import { PASSWORD_MIN_LENGTH, PASSWORD_REGEX, PASSWORD_REGEX_ERROR } from "@/lib
 import db from "@/lib/db";
 import { z } from "zod";
 import bcrypt from "bcrypt";
-import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import getSession from "@/lib/session";
 
 const checkUsername = (username: string) => !username.includes("potato");
 const checkPassword = ({ password, confirmPassword }: { password: string; confirmPassword: string }) => password === confirmPassword;
-
-// check if username is taken
-const checkUniqueUsername = async (username: string) => {
-	const user = await db.user.findUnique({
-		where: {
-			username,
-		},
-		select: {
-			id: true,
-		},
-	});
-	return !Boolean(user);
-};
-// check if the email is taken
-const checkUniqueEmail = async (email: string) => {
-	const user = await db.user.findUnique({
-		where: {
-			email: email,
-		},
-		select: {
-			id: true,
-		},
-	});
-	return !Boolean(user);
-};
 
 const formSchema = z
 	.object({
@@ -45,11 +19,48 @@ const formSchema = z
 			})
 			.toLowerCase()
 			.trim()
-			.refine(checkUsername, "No potatoes allowed!")
-			.refine(checkUniqueUsername, "This username is already taken"),
-		email: z.string().email().toLowerCase().refine(checkUniqueEmail, "There is an account already registered with that email"),
+			.refine(checkUsername, "No potatoes allowed!"),
+		email: z.string().email().toLowerCase(),
 		password: z.string().min(PASSWORD_MIN_LENGTH),
 		confirmPassword: z.string().min(PASSWORD_MIN_LENGTH),
+	})
+	.superRefine(async ({ username }, ctx) => {
+		const user = await db.user.findUnique({
+			where: {
+				username,
+			},
+			select: {
+				id: true,
+			},
+		});
+		if (user) {
+			ctx.addIssue({
+				code: "custom",
+				message: "This username is already taken",
+				path: ["username"],
+				fatal: true,
+			});
+			return z.NEVER;
+		}
+	})
+	.superRefine(async ({ email }, ctx) => {
+		const user = await db.user.findUnique({
+			where: {
+				email,
+			},
+			select: {
+				id: true,
+			},
+		});
+		if (user) {
+			ctx.addIssue({
+				code: "custom",
+				message: "This email is already taken",
+				path: ["email"],
+				fatal: true,
+			});
+			return z.NEVER;
+		}
 	})
 	.refine(checkPassword, { message: "Both passwords should be the same!", path: ["confirmPassword"] });
 
@@ -63,6 +74,7 @@ export async function createAccount(prevState: any, formData: FormData) {
 	};
 	const result = await formSchema.safeParseAsync(data);
 	if (!result.success) {
+		console.log(result.error.flatten());
 		return result.error.flatten();
 	} else {
 		// hash password
