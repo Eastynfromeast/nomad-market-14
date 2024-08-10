@@ -241,7 +241,7 @@
 
 - make sure that we understand how the authentication work
 
-- Log out
+- Log out : session을 삭제함
 
   ```
   	const logOut = async () => {
@@ -270,4 +270,13 @@
     }
     notFound();
   }
+  ```
+
+### 8.9 Middleware
+
+- middleware runs at every single requests in your website!
+
+- `nextUrl` gives you lots of informations about your location
+  ```
+  	console.log(request.nextUrl.pathname);
   ```
