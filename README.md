@@ -311,3 +311,5 @@ export const config = {
 ## 10. Products
 
 ### 10.1 Tab Bar
+
+### 10.2 Skeletons
