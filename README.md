@@ -280,3 +280,19 @@
   ```
   	console.log(request.nextUrl.pathname);
   ```
+
+### 8.10 Matcher
+
+- how we can stop the middleware from running in certain requests
+
+  - when we want to exclude requests for JS, CSS, favicon file and etc
+
+- middleware의 함수명은 **middleware** 여야 되고, config object의 이름은 **config** 가 되어야 한다는 사실을 명심하자!
+
+```
+export const config = {
+	matcher: ["/", "/profile", "/create-account", "/user/:path"],
+  // 아니면 정규식 사용 가능!
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};
+```
