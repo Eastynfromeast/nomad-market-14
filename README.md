@@ -303,3 +303,11 @@ export const config = {
   - edge runtime에서 실행되고 nodeJS runtime에서는 실행되지 않음
   - The Edge runtime is used for Middleware (routing rules like redirects, rewrites, and setting headers).
   - The Edge Runtime which contains a more limited set of APIs.
+
+### 8.12 Authentication Middleware
+
+## 9 Social Authentication
+
+## 10. Products
+
+### 10.1 Tab Bar
