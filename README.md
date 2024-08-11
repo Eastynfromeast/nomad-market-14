@@ -296,3 +296,10 @@ export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
 ```
+
+### 8.11 Edge Runtime
+
+- middleware는 아무거나 실행할 수 있을 정도로 강력하지는 않음
+  - edge runtime에서 실행되고 nodeJS runtime에서는 실행되지 않음
+  - The Edge runtime is used for Middleware (routing rules like redirects, rewrites, and setting headers).
+  - The Edge Runtime which contains a more limited set of APIs.
