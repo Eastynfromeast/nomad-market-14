@@ -14,7 +14,7 @@ export default function ListProduct({ title, price, created_at, photo, id }: Lis
 	return (
 		<Link href={`/products/${id}`} className="flex gap-5">
 			<div className="relative size-32 rounded-md overflow-hidden">
-				<Image fill src={photo} className="object-cover" alt={title} quality={100} />
+				<Image fill src={photo} className=" size-32 object-cover" alt={title} priority={true} />
 			</div>
 			<ul className="flex flex-col gap-1 text-white">
 				<li className="text-lg">{title}</li>

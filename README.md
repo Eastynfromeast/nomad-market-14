@@ -384,3 +384,5 @@ export const config = {
 ### 10.8 Recap
 
 ### 10.9 Infinite Scrolling
+
+- 역시 infinite scroll에는 `new IntersectionObserver()`
