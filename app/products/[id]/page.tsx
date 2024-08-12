@@ -60,7 +60,7 @@ export default async function ProductDetail({ params }: { params: { id: string }
 	return (
 		<div className="relative overflow-hidden">
 			<div className="relative aspect-square overflow-hidden rounded-md">
-				<Image fill src={product.photo} alt={product.title} />
+				<Image className="object-cover" fill src={product.photo} alt={product.title} />
 			</div>
 			<ul className="p-5 flex gap-3 items-center border-b border-neutral-500">
 				<li className="size-10 rounded-full overflow-hidden">

@@ -347,3 +347,35 @@ export const config = {
 
 - 이미지 최적화는 돈이 든다 => NextJS Image를 사용하려면 이미지 링크를 설정해야함
 - [NextJS 공식문서 확인!](https://nextjs.org/docs/pages/building-your-application/optimizing/images#remote-images)
+
+### 10.7 Pagination Actions
+
+- 버튼 눌러서 다음 프로덕트 가져오기
+
+  1. product-list 컴포넌트 따로 빼주기
+  2. 해당 페이지 디렉토리 내부에 `action.ts` 만들고 함수 추가!
+
+  ```
+  export async function getMoreProducts(page: number) {
+    const products = await db.product.findMany({
+      select: {
+        title: true,
+        price: true,
+        created_at: true,
+        photo: true,
+        id: true,
+      },
+      skip: 1,
+      take: 1,
+      orderBy: {
+        created_at: "desc",
+      },
+    });
+    return products;
+  }
+  ```
+
+- 프리즈마한테 타입 추론 시키기
+  ```
+  export type InitialProducts = Prisma.PromiseReturnType<typeof getInitialProducts>;
+  ```
