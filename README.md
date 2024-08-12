@@ -340,3 +340,5 @@ export const config = {
   ```
     const formatter = new Intl.RelativeTimeFormat("ko");
   ```
+
+### 10.5 Product Detail
