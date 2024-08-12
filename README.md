@@ -313,3 +313,22 @@ export const config = {
 ### 10.1 Tab Bar
 
 ### 10.2 Skeletons
+
+- super easy to create skeleton in NextJS 14
+  - 해당 루트 디렉토리 내에 loading.tsx를 생성하고
+  - 모양을 만든다! 끝!
+
+### 10.3 Product Component
+
+- NextJS `<Image/>` 태그
+
+  - NextJS가 알아서 최적화!
+  - [This API reference will help you understand how to use props and configuration options available for the Image Component](https://nextjs.org/docs/pages/api-reference/components/image)
+
+    ```
+    // 렌더링된 HTML
+    <img srcset="/_next/image?url=%2Fimages%2Fnuri_annoyed_240711.png&w=256&q=75 1x, /_next/image?url=%2Fimages%2Fnuri_annoyed_240711.png&w=640&q=75 2x">
+
+    // JSX
+    <Image fill src={photo} alt={title} quality={100} />
+    ```
