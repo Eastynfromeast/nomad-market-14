@@ -354,6 +354,7 @@ export const config = {
 
   1. product-list 컴포넌트 따로 빼주기
   2. 해당 페이지 디렉토리 내부에 `action.ts` 만들고 함수 추가!
+  3. product-list 컴포넌트 버튼에 클릭이벤트로 `action.ts` 속 함수 콜
 
   ```
   export async function getMoreProducts(page: number) {
@@ -379,3 +380,7 @@ export const config = {
   ```
   export type InitialProducts = Prisma.PromiseReturnType<typeof getInitialProducts>;
   ```
+
+### 10.8 Recap
+
+### 10.9 Infinite Scrolling
