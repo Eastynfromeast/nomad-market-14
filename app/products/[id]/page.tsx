@@ -63,14 +63,14 @@ export default async function ProductDetail({ params }: { params: { id: string }
 				<Image fill src={product.photo} alt={product.title} />
 			</div>
 			<ul className="p-5 flex gap-3 items-center border-b border-neutral-500">
-				<li className="size-10 rounded-full">
+				<li className="size-10 rounded-full overflow-hidden">
 					{product.user.avatar !== null ? <Image src={product.user.avatar} alt={product.user.username} width={40} height={40} /> : <UserIcon />}
 				</li>
 				<li>
 					<h3>{product.user.username}</h3>
 				</li>
 			</ul>
-			<div className="p-5">
+			<div className="p-5 flex flex-col gap-2">
 				<h1 className="text-2xl font-semibold">{product.title}</h1>
 				<p>{product.description}</p>
 			</div>

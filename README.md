@@ -342,3 +342,8 @@ export const config = {
   ```
 
 ### 10.5 Product Detail
+
+### 10.6 Image Hostnames
+
+- 이미지 최적화는 돈이 든다 => NextJS Image를 사용하려면 이미지 링크를 설정해야함
+- [NextJS 공식문서 확인!](https://nextjs.org/docs/pages/building-your-application/optimizing/images#remote-images)
