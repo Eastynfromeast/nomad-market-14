@@ -332,3 +332,11 @@ export const config = {
     // JSX
     <Image fill src={photo} alt={title} quality={100} />
     ```
+
+### 10.4 Detail Skeleton
+
+- [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat)
+  - The Intl.RelativeTimeFormat object enables language-sensitive relative time formatting.
+  ```
+    const formatter = new Intl.RelativeTimeFormat("ko");
+  ```
