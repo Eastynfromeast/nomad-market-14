@@ -420,3 +420,17 @@ export const config = {
     await fs.appendFile(`./public/images/${data.photo.name}`, Buffer.from(photoData));
   }
   ```
+
+### 11.3 Image Setup
+
+- Upload strategies
+
+  1. User upload photos to our server -> upload photo to the cloudflare
+
+  - cons: two duplicated request! -> need to pay the bandwidth :(
+
+  2. browser -> cloudflare -> user -> server
+
+- [cloudflare Doc](https://developers.cloudflare.com/images)
+
+- Cloudflare 계정을 만들고 5달러 지불해서 Cloudflare Images 사용하기
