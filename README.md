@@ -394,6 +394,7 @@ export const config = {
 ### 11.0 Introduction
 
 - 영원히 못 생길... file input 모양 바꾸는 트릭!
+  - input을 `hidden` 처리하고 label 클릭하면 input 클릭 동작이 일어남
   ```
   	<label
       htmlFor="photo"
@@ -403,3 +404,9 @@ export const config = {
     </label>
     <input onChange={onImageChange} type="file" id="photo" name="photo" className="hidden" />
   ```
+
+### 11.1 Form Action
+
+- `URL.createObjectURL()`
+  - 로컬에서 볼 수 있는 url 생성
+  - 파일을 브라우저 메모리 어딘가에 저장
