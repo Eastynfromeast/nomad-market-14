@@ -410,3 +410,13 @@ export const config = {
 - `URL.createObjectURL()`
   - 로컬에서 볼 수 있는 url 생성
   - 파일을 브라우저 메모리 어딘가에 저장
+
+### 11.2 Product Upload
+
+- not professional 하지만 괜찮은 이미지 저장 임시방편
+  ```
+  if (data.photo instanceof File) {
+  	const photoData = await data.photo.arrayBuffer();
+    await fs.appendFile(`./public/images/${data.photo.name}`, Buffer.from(photoData));
+  }
+  ```
