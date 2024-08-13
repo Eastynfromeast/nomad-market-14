@@ -455,3 +455,8 @@ export const config = {
 
 - cloudflare에 업로드된 이미지를 보려면 경로 뒤에 `/avatar` 혹은 `/public` 등의 variant가 필요
   - `/avatar` 가 따로 생성되지 않으면 cloudflare admin 페이지에서 variants로 가서 생성!
+
+### 11.6 Variants
+
+- cloudflare admin -> images -> variants
+- image transformation via url 을 하면 403 forbidden 에러가 뜸...
