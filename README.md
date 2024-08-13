@@ -386,3 +386,20 @@ export const config = {
 ### 10.9 Infinite Scrolling
 
 - 역시 infinite scroll에는 `new IntersectionObserver()`
+
+## 11 Product Upload
+
+- Zod, React Hook Form, Server Actions의 조합을 배우게 됩니다!
+
+### 11.0 Introduction
+
+- 영원히 못 생길... file input 모양 바꾸는 트릭!
+  ```
+  	<label
+      htmlFor="photo"
+      className="border-2 aspect-square border-dashed rounded-md flex flex-col justify-center items-center text-neutral-300 border-neutral-300 cursor-pointer group">
+      <PhotoIcon className="w-20  transition group-hover:text-neutral-400" />
+      <p className="text-neutral-400 text-sm">사진을 추가해주세요.</p>
+    </label>
+    <input onChange={onImageChange} type="file" id="photo" name="photo" className="hidden" />
+  ```
