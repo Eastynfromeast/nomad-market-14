@@ -434,3 +434,7 @@ export const config = {
 - [cloudflare Doc](https://developers.cloudflare.com/images)
 
 - Cloudflare 계정을 만들고 5달러 지불해서 Cloudflare Images 사용하기
+
+### 11.4 Upload URLs
+
+- 유저가 사진을 선택하는 즉시 업로드 URL을 요청

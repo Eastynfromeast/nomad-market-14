@@ -4,7 +4,7 @@ import Button from "@/components/button";
 import Input from "@/components/input";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import { uploadProduct } from "./actions";
+import { getUploadUrl, uploadProduct } from "./actions";
 import { z } from "zod";
 import { useFormState } from "react-dom";
 
@@ -19,7 +19,8 @@ const fileSchema = z.object({
 export default function AddProduct() {
 	const [preview, setPreview] = useState("");
 	const [fileError, setFileError] = useState<string[]>([]);
-	const onImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const [uploadUrl, setUploadUrl] = useState("");
+	const onImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const {
 			target: { files },
 		} = event;
@@ -35,6 +36,11 @@ export default function AddProduct() {
 			const url = URL.createObjectURL(file);
 			setPreview(url);
 			setFileError([]);
+			const { success, result } = await getUploadUrl();
+			if (success) {
+				const { id, uploadUrl } = result;
+				setUploadUrl(uploadUrl);
+			}
 		}
 	};
 	const [state, dispatch] = useFormState(uploadProduct, null);
