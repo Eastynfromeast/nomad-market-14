@@ -438,3 +438,20 @@ export const config = {
 ### 11.4 Upload URLs
 
 - 유저가 사진을 선택하는 즉시 업로드 URL을 요청
+
+### 11.5 Image Upload
+
+- formData를 가로채서 file 말고 string인 uploadURL로 바꾸기
+
+  ```
+  	const interceptAction = (_: any, formData: FormData) => {
+      // upload imge to cloudflare
+      // replace `photo` in formData
+      // call uploadProduct()
+    };
+
+    const [state, dispatch] = useFormState(interceptAction, null);
+  ```
+
+- cloudflare에 업로드된 이미지를 보려면 경로 뒤에 `/avatar` 혹은 `/public` 등의 variant가 필요
+  - `/avatar` 가 따로 생성되지 않으면 cloudflare admin 페이지에서 variants로 가서 생성!
