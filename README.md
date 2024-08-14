@@ -460,3 +460,15 @@ export const config = {
 
 - cloudflare admin -> images -> variants
 - image transformation via url 을 하면 403 forbidden 에러가 뜸...
+
+### 11.8 RHF Refactor
+
+- how to combine validtion adding React Hook Form with server action and zod
+
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers)
+
+  ```
+  npm i @hookform/resolvers
+  ```
+
+- react-hook-form의 handleSubmit은 validation이 끝나고 시작됨!
