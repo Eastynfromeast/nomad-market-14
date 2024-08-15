@@ -505,3 +505,14 @@ const getCachedProducts = homeCache(getInitialProducts, ["home-products"], {
 	revalidate: 60,
 });
 ```
+
+### 13.3 revalidatePath
+
+- how to revalidate the data on demand
+  1. URL 타겟팅
+  ```
+  const revalidate = async () => {
+    "use server";
+    revalidatePath("/home");
+  };
+  ```
