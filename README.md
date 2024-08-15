@@ -555,7 +555,7 @@ async function fetchExample(){
 - development mode에서는 db를 계속 hit함
 - production mode에서는 다름!
   ```
-  npm run start // development mode
+  npm run dev // development mode
   npm run build // production mode
   ```
   - static vs dynamic ? <- 누가 보는지에 따라 내용이 달라지는가?
@@ -578,4 +578,22 @@ async function fetchExample(){
   - auto : 기본값. 캐싱을 엄청나게 할 것이다 as much as possible
   - force-dynamic : static -> dynamic 페이지로 바꿔라
 
+  ```
+  export const dynamic = "force-dynamic";
+  ```
+
 - revalidate : 특정한 시간에 페이지를 재검증하도록 NextJS에게 지시 가능
+  ```
+  export const revalidate = 60;
+  ```
+
+### 13.10 generateStaticParams
+
+- url에 변수가 있어도 static 페이지로 만들 수 있음 -> `generateStaticParams()`
+- products/[id]
+  - id가 4인 product detail 페이지를 static하게 바꿈
+  ```
+  export async function generateStaticParams() {
+    return [{ id: "4" }];
+  }
+  ```
