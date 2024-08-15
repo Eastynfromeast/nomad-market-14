@@ -549,3 +549,20 @@ async function fetchExample(){
   }
 }
 ```
+
+### 13.6 Production Cache
+
+- development mode에서는 db를 계속 hit함
+- production mode에서는 다름!
+  ```
+  npm run start // development mode
+  npm run build // production mode
+  ```
+  - static vs dynamic ? <- 누가 보는지에 따라 내용이 달라지는가?
+    - static : 사용자가 달라져도 동일
+      - ex. login, create-account, and home!
+      - static한 페이지에서는 사용자의 리퀘스트가 db를 호출하지 않는다?
+    - dynamic
+      - ex. profile
+    - home 이 왜 static 한가?
+      - 쿠키를 사용하지 않으며 사용자가 누군지 상관 없고 header도 사용하지 않음
