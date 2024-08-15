@@ -34,6 +34,7 @@ async function getProduct(id: number) {
 }
 
 const getCachedProduct = nextCache(getProduct, ["product-detail"], {
+	revalidate: 60,
 	tags: ["product-detail", "xxxx"],
 });
 

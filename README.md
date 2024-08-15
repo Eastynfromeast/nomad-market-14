@@ -533,3 +533,19 @@ const revalidate = async () => {
   revalidateTag("product-title");
 };
 ```
+
+### 13.5 fetch Cache
+
+- NextJS에서는 fetch 함수가 nextCache 함수와 동일한 속성을 제공해줌
+  - fetch 함수 중 GET request일 때만 캐싱될 것
+
+```
+async function fetchExample(){
+  fetch("https://api.com),{
+    next:{
+      revalidate: 60,
+      tags:["test"]
+    }
+  }
+}
+```
