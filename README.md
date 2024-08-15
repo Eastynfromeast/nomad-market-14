@@ -516,3 +516,20 @@ const getCachedProducts = homeCache(getInitialProducts, ["home-products"], {
     revalidatePath("/home");
   };
   ```
+
+### 13.4 revalidateTag
+
+- revalidate based on the tag
+
+```
+const getCachedProduct = nextCache(
+	getProduct,
+	["product-detail"], { // cache-key는 유니크해야함
+	tags: ["product-detail"], // tags는 cache-key와 동일하지 않아도 되고 유니크하지 않아도 됨
+});
+
+const revalidate = async () => {
+  "use server";
+  revalidateTag("product-title");
+};
+```
