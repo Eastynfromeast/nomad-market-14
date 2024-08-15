@@ -562,7 +562,20 @@ async function fetchExample(){
     - static : 사용자가 달라져도 동일
       - ex. login, create-account, and home!
       - static한 페이지에서는 사용자의 리퀘스트가 db를 호출하지 않는다?
+      - static page는 한번만 코드가 실행된다 <- refresh 한다고 해서 html을 새로 만들지 않는다
     - dynamic
-      - ex. profile
+      - ex. profile, /products/\[id]
     - home 이 왜 static 한가?
       - 쿠키를 사용하지 않으며 사용자가 누군지 상관 없고 header도 사용하지 않음
+
+### 13.7 Route Segment Config
+
+- customization option we have
+- [Route Segment Config](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config)
+
+- dynamic : dynamic 값 설정
+
+  - auto : 기본값. 캐싱을 엄청나게 할 것이다 as much as possible
+  - force-dynamic : static -> dynamic 페이지로 바꿔라
+
+- revalidate : 특정한 시간에 페이지를 재검증하도록 NextJS에게 지시 가능
