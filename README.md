@@ -597,3 +597,13 @@ async function fetchExample(){
     return [{ id: "4" }];
   }
   ```
+
+### 13.11 dynamicParams
+
+- [Control what happens when a dynamic segment is visited that was not generated with generateStaticParams.](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams)
+
+- `dynamicParams` 변수가 `true` 로 설정되면 `generateStaticParams()`로 설정되지 않은 페이지들은 render되고, 데이터베이스가 호출될 것
+
+```
+export const dynamicParams = true;
+```
