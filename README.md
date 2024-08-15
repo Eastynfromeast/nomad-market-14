@@ -472,3 +472,36 @@ export const config = {
   ```
 
 - react-hook-form의 handleSubmit은 validation이 끝나고 시작됨!
+
+## 13 Caching
+
+### 13.0 Introduction
+
+- how to cache anything we want!
+  - fetch fn is cached automatically
+  - data를 맨날 부르면 안된다!
+
+### 13.1 nextCache
+
+- unstable_cache allows you to cache the results of expensive operations, like database queries, and reuse them across multiple requests.
+
+- unstable_cache 의 parameters
+  - 데이터베이스와 대화할 함수
+  - 캐시 이름
+
+```
+import { unstable_cache as homeCache } from "next/cache";
+const getCachedProducts = homeCache(getInitialProducts, ["home-products"]);
+```
+
+### 13.2 revalidate
+
+- nextCache의 함수가 처음 호출되고 60초가 지나지 않았으면 NextJS는 cache 안에 있는 데이터를 return 할 것이다!
+  - 60초마다 실행된다는 것 X
+  - 60초가 지나서 **새로운 요청이 있다면** 함수를 재호출할 것
+
+```
+const getCachedProducts = homeCache(getInitialProducts, ["home-products"], {
+	revalidate: 60,
+});
+```

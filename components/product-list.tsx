@@ -1,9 +1,9 @@
 "use client";
 
-import { InitialProducts } from "@/app/(tabs)/products/page";
+import { InitialProducts } from "@/app/(tabs)/home/page";
 import ListProduct from "./list-product";
 import { useEffect, useRef, useState } from "react";
-import { getMoreProducts } from "@/app/(tabs)/products/actions";
+import { getMoreProducts } from "@/app/(tabs)/home/actions";
 
 interface ProductsListProps {
 	initialProducts: InitialProducts;
@@ -63,7 +63,7 @@ export default function ProductList({ initialProducts }: ProductsListProps) {
 			{products.map(product => (
 				<ListProduct key={product.id} {...product} />
 			))}
-			{!isLastPage ? (
+			{/* 	{!isLastPage ? (
 				<span
 					ref={trigger}
 					className="text-sm font-semibold bg-orange-500 w-fit mx-auto px-3 py-2 rounded-md text-white transition hover:opacity-90 active:scale-95"
@@ -72,7 +72,7 @@ export default function ProductList({ initialProducts }: ProductsListProps) {
 				</span>
 			) : (
 				<p className="text-center">No more items</p>
-			)}
+			)} */}
 		</div>
 	);
 }
