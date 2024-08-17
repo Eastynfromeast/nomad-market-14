@@ -608,3 +608,24 @@ async function fetchExample(){
 ```
 export const dynamicParams = true;
 ```
+
+## 14 Optimistic Updates
+
+### 14.0 Introduction
+
+- Every model needs to have single field with ID
+
+  - Like는 한 유저가 해당 포스트에 한번만 할 수 있으므로 id를 지정해주는 방식이 달라짐
+  - `@@id(name: "id", [userId, postId])` : id를 userId와 postId로 조합해서 가질 것!
+
+    ```
+    model Like {
+      ...
+      user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+      post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+      userId     Int
+      postId     Int
+
+      @@id(name: "id", [userId, postId])
+    }
+    ```
