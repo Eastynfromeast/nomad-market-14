@@ -669,3 +669,10 @@ async function getCachedLikeStatus(postId: number) {
 	return cachedOperation(postId, userId!);
 }
 ```
+
+### 14.4 useOptimistic
+
+- User가 mutation을 일으켰을 때 그냥 기다리기만 할 것인가? No
+
+- [useOptimistic 는 UI를 낙관적으로 업데이트할 수 있게 해주는 React Hook입니다.](<https://ko.react.dev/reference/react/useOptimistic#noun-labs-1201738-(2)>)
+  - 이 상태는 “낙관적” 상태라고 불리는데, 실제로 작업을 완료하는 데 시간이 걸리더라도 사용자에게 즉시 작업의 결과를 표시하기 위해 일반적으로 사용됩니다.
