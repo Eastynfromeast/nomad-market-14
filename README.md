@@ -629,3 +629,23 @@ export const dynamicParams = true;
       @@id(name: "id", [userId, postId])
     }
     ```
+
+### 14.1 See Posts
+
+### 14.2 Likes and Dislikes
+
+```
+	const likePost = async () => {
+		"use server";
+		const session = await getSession();
+		try {
+			await db.like.create({
+				data: {
+					postId: id,
+					userId: session.id!,
+				},
+			});
+			revalidatePath(`/posts/${id}`);
+		} catch (e) {}
+	};
+```

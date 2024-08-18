@@ -28,7 +28,7 @@ export const metadata = {
 
 export default async function Life() {
 	const posts = await getPosts();
-	console.log(posts);
+
 	return (
 		<div className="p-5 flex flex-col">
 			{posts.map(post => (
@@ -37,8 +37,10 @@ export default async function Life() {
 					href={`/posts/${post.id}`}
 					className="pb-5 mb-5 border-b border-neutral-500 text-neutral-200 flex flex-col last:pb-0 last:border-b-0"
 				>
-					<h2 className="text-white text-lg font-semibold">{post.title}</h2>
-					<p>{post.description}</p>
+					<article className="mb-3">
+						<h2 className="text-white text-lg font-semibold mb-1">{post.title}</h2>
+						<p>{post.description}</p>
+					</article>
 					<div className="flex items-center justify-between text-sm">
 						<ul className="flex gap-4 items-center">
 							<li>{formatToTimeAgo(post.created_at.toString())}</li>
