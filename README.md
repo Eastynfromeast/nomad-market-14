@@ -649,3 +649,23 @@ export const dynamicParams = true;
 		} catch (e) {}
 	};
 ```
+
+### 14.3 Cache Tags
+
+- cookie와 unstable_cache는 동시에 쓸 수는 없다
+  - tag key에 변수를 집어넣을 수도 있음
+
+```
+// 에러
+const getCachedLikeStatus = nextCache(getLikeStatus, ["post-like-staut]);
+
+// 옳은 방식
+async function getCachedLikeStatus(postId: number) {
+	const session = await getSession();
+	const userId = session.id;
+	const cachedOperation = nextCache(getLikeStatus, ["post-like-status"], {
+		tags: [`like-status-${postId}`],
+	});
+	return cachedOperation(postId, userId!);
+}
+```
